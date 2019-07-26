@@ -17,7 +17,7 @@ public class App {
         Trades[] arr = ConnectorImpl.pull(url);
 
         int seconds = 0;
-        while (seconds < 10) {
+        while (seconds < 100) {
 
             if (history.empty()) {
                 Arrays.stream(util.reverse(ConnectorImpl.pull(url))).forEach(history::push);
@@ -30,7 +30,7 @@ public class App {
             System.out.println(seconds);
             seconds++;
         }
-        
+
         history.forEach(System.out::println);
     }
 }
