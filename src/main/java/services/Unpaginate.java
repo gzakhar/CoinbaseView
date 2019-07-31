@@ -16,8 +16,6 @@ public class Unpaginate {
             res[res.length - i - 1] = temp;
         }
 
-
         return Arrays.stream(res).filter(s -> s.getTrade_id() > point.getTrade_id()).toArray(Trades[]::new);
-
     }
 }
